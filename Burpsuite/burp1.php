@@ -22,9 +22,14 @@
 <body>
 
 <?php
-    // Displaying the text
-    echo '<div class="centered-text">This is Centered Bold Text</div>';
+    $headers = getallheaders();
+    foreach ($headers as $header => $value) {
+        echo "<div class='centered-text'>$header: $value</div>";
+    }
 ?>
 
 </body>
 </html>
+
+
+<?php
