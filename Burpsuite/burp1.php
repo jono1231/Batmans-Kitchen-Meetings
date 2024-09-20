@@ -22,7 +22,7 @@
 <body>
 
 <?php
-    $page -> set_title("Nya?");
+    $page -> setTitle("Nya?");
     if (isset($_SERVER['HTTP_USER_AGENT'])) {
         $userAgent = strtolower($_SERVER['HTTP_USER_AGENT']);
         if (str_contains($userAgent, "meowlingual")) {
