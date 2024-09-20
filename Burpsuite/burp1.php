@@ -22,15 +22,16 @@
 <body>
 
 <?php
-    // $headers = getallheaders();
-    // foreach ($headers as $header => $value) {
-        
-    // }
+    $page -> set_title("Nya?");
     if (isset($_SERVER['HTTP_USER_AGENT'])) {
-        $userAgent = $_SERVER['HTTP_USER_AGENT'];
-        echo "User-Agent: " . $userAgent;
+        $userAgent = strtolower($_SERVER['HTTP_USER_AGENT']);
+        if (str_contains($userAgent, "meowlingual")) {
+            echo "<div class='centered-text'> Congrats nya <3 </div>";
+        } else {
+            echo "<div class='centered-text'> User-Agent is $userAgent...\n I only trust <a href='https://www.japantrendshop.com/meowlingual-cat-translation-device-p-2739.html?srsltid=AfmBOopOwWSI982TvnizjgGesrIfPwCot9wbTTg8e91b4TtxytcEylI3'> meowlingual cat translation devices!</a></div>";
+        }
      } else {
-        echo "User-Agent header is not set.";
+        echo "<div class='centered-text'> User-Agent header is not set. </div>";
      }
 ?>
 
