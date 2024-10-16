@@ -13,7 +13,7 @@
             align-items: center;
             font-family: Arial, sans-serif;
         }
-        .centered-text {
+        .centered-text {w
             font-size: 48px;
             font-weight: bold;
         }

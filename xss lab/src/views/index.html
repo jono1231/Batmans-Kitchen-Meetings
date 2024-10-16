@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Simulator</title>
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        form {
+            margin: 20px 0;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+        }
+        input[type="submit"], button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <p>
+        <header>I'm such a nice site. Type your name and I'll say hi to you below!</header>
+
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = urlParams.get('name');
+            if (name) {
+                // TODO: Make safe
+                document.write("<p> Hi " + name + "!</p>");
+            }
+        </script>
+
+        <form id="userForm" action="" method="GET">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <input type="submit" value="Submit">
+        </form>
+
+        <p> Unsafe link found? Report it to the admins! (Make sure it starts with the url)
+            <br></br>
+            Please note that it will take a while to visit the site.
+        </p>
+        <form action="/report" method="POST">
+            <label for="url">URL:</label>
+            <input type="url" id="url" name="url" placeholder="Enter URL" required>
+            <button type="submit">Submit</button>
+        </form>
+    </p>
+
+
+    <script>
+        window.onreadystatechange = function() {
+            if (document.readyState === 'complete')
+            {
+                const urlParams = new URLSearchParams(window.location.search);
+                const name = urlParams.get('name');
+                if (name) {
+                    // TODO: Make safe
+                    console.log(name);
+                    document.body.innerHTML += "<p> Hi " + name + "!</p>";
+                }
+            }
+        };
+    </script>
+
+</body>
+</html>
